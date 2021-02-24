@@ -1,6 +1,10 @@
+//Driver code
 class Main{
     public static void main(String[] args) {
+
         Stack theSatck = new Stack(10);
+
+        //push
         theSatck.push(10);
         theSatck.push(20);
         theSatck.push(30);
@@ -9,6 +13,7 @@ class Main{
         theSatck.push(60);
         theSatck.push(70);
 
+        //peek
         System.out.println("Topmost element in the stack is " + theSatck.peek());
         System.out.println("Is the stack full? - " + theSatck.isFull());
 
@@ -19,14 +24,14 @@ class Main{
 
         System.out.println("Is the stack empty now? - " + theSatck.isEmpty());
 
+        //Overflow scenario
         for(int i=1;i<=11;i++){
             try{
                 theSatck.push(i);
                 System.out.println("Element inserted " + i);
             }catch(Exception ex){
                 System.out.println("The Following exception was caught "+ ex);
-            }
-                
+            }          
         }   
     }
 }
@@ -69,8 +74,4 @@ class Stack{
     public boolean isFull(){
         return (top == maxSize-1);
     }
-
-
-
-
 }
