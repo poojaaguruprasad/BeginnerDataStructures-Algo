@@ -63,8 +63,8 @@ class Queue{
             System.out.println("Queue is full!");
             return;
         }
-        if(rear == maxSize-1){ //wraparound when queue is not full
-            rear = -1;
+        if(rear == maxSize-1){ //wraparound when queue is not full or isFull check can be removed and value in the front can be overriden
+            rear = -1;          // (rear+1)%maxSize -> should also work for wraparound
         }
         queueArray[++rear] = itemToBeInserted;
         nItems++;
