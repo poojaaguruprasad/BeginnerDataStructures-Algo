@@ -1,8 +1,8 @@
-class Main{
+class StackLinkedlistBaesImpl{
     public static void main(String[] args) {
         
     }    
 }
-class Stack{
+class StackLL{
     
 }

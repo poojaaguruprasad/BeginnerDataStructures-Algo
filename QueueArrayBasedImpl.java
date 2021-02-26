@@ -41,7 +41,7 @@ class QueueWithnitems{
         }
     }
 }
-
+//circular queue covered
 class Queue{
     
     private int maxSize;

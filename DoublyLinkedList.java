@@ -1,3 +1,3 @@
-public class DoublyLinkedList {
+class DoublyLinkedList {
     
 }

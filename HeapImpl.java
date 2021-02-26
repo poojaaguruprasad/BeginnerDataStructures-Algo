@@ -1,3 +1,3 @@
-public class HeapImpl {
+class HeapImpl {
     
 }

@@ -1,5 +1,5 @@
 //Driver code
-class Main{
+class StackArrayBasedImpl{
     public static void main(String[] args) {
 
         Stack theSatck = new Stack(10);

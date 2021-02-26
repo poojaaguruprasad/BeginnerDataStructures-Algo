@@ -1,8 +1,8 @@
-class Main{
+class QueueLinkedListBasedImpl{
     public static void main(String[] args) {
         
     }
 }
-class Queue{
+class QueueLL{
     
 }

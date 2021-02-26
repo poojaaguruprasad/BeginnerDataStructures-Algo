@@ -1,3 +1,3 @@
-public class HeapSort {
+class HeapSort {
     
 }
