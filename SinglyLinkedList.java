@@ -16,6 +16,32 @@ class SinglyLinkedList {
         }
 
         theList.displayList();
+
+        theList.insertFirst(11);
+        theList.insertFirst(22);
+        theList.insertFirst(33);
+        theList.insertFirst(44);
+
+        theList.displayList();
+
+        Link newLink = theList.find(33);
+        if(newLink!=null){
+            System.out.println(" Found Link with key " + newLink.data);
+        }
+        else{
+            System.out.println("Can't find Link!");
+        }
+
+        Link deletedLink = theList.delete(22);
+        if(deletedLink!=null){
+            System.out.println(" Deleted Link Link with key " + deletedLink.data);
+        }
+        else{
+            System.out.println("Can't find Link with that key to delete!");
+        }
+
+        theList.displayList();
+
     }
 }
 
@@ -64,4 +90,37 @@ class LinkList{
         }
         System.out.println("");
     }
+
+    public Link find(int key){
+        Link current = head;
+        while(current.data != key){
+            if(current.next == null){
+                return null;
+            }else{
+                current = current.next;
+            }
+        }
+        return current;
+    }
+
+    public Link delete(int key){
+        Link current = head;
+        Link previous = head;
+        while(current.data!=key){
+            if(current.next == null){
+                return null;
+            }else{
+                previous = current;
+                current = current.next;
+            }
+        } 
+            if(current == head){
+                head = head.next;
+            }
+            else{
+                previous.next = current.next;
+            }
+        return current;
+    }
+
 }
