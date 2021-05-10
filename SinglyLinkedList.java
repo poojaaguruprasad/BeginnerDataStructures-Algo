@@ -91,10 +91,10 @@ class LinkList{
         System.out.println("");
     }
 
-    public Link find(int key){
+    public Link find(int key){  
         Link current = head;
         while(current.data != key){
-            if(current.next == null){
+            if(current.next == null){       //looped till end
                 return null;
             }else{
                 current = current.next;
@@ -113,12 +113,12 @@ class LinkList{
                 previous = current;
                 current = current.next;
             }
-        } 
-            if(current == head){
-                head = head.next;
+        } //keep looping until you find the current node with key/go to the end of the list
+            if(current == head){        //special case if the current node found is the first node
+                head = head.next;   
             }
             else{
-                previous.next = current.next;
+                previous.next = current.next;   //delete the current by changing previous's ref
             }
         return current;
     }
