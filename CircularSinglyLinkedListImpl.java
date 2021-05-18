@@ -6,6 +6,19 @@ class CircularSinglyLinkedListImpl {
         circularLL.insertAtBeginning(4);
         circularLL.insertAtEnd(3);
         circularLL.insertAfterGivenPosition(2, 5);
+        circularLL.insertAtEnd(6);
+        circularLL.insertAtEnd(7);
+        circularLL.insertAtEnd(8);
+        circularLL.printList();
+        circularLL.deleteFirstNode();
+        circularLL.printList();
+        circularLL.deleteLastNode();
+        circularLL.printList();
+        circularLL.deleteAtGivenPosition(4);
+        circularLL.printList();
+        circularLL.deleteAtGivenPosition(1);
+        circularLL.printList();
+        circularLL.deleteAtGivenPosition(3);
         circularLL.printList();
     }
 }
@@ -60,15 +73,46 @@ class CircularLL{
     }
 
     public void deleteFirstNode(){
-
+        if(tail == null)return;
+        else if(tail == tail.next){
+            tail = null;
+        }else{
+            Node head = tail.next;
+            tail.next = head.next;
+            head = null;
+        }
     }
 
     public void deleteLastNode(){
-
+        if(tail == null)return;
+        if(tail.next == null){
+            tail = null;
+        }
+        Node current = tail.next;
+        while(current.next!=tail){
+            current = current.next;
+        }
+        current.next = tail.next;
+        tail = current;
     }
 
-    public void deleteAtGivenPosition(int givenPosition){
-
+    public void deleteAtGivenPosition(int givenPosition){     //assumes given position is intermediary and not last
+        if(tail == null) return;
+        else if(tail.next == tail && givenPosition == 1)tail = null;
+        else if(givenPosition == 1) {
+            deleteFirstNode();
+        }else{
+        Node current = tail.next;
+        Node givenNode;
+        int count = 1;
+        while(count < givenPosition-1){
+            current = current.next;
+            count++;
+        }
+        givenNode = current.next;
+        current.next = givenNode.next;
+        givenNode.next = null;
+      }
     }
 
     public void printList(){
