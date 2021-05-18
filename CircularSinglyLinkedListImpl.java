@@ -111,11 +111,14 @@ class CircularLL{
         }
         givenNode = current.next;
         current.next = givenNode.next;
-        givenNode.next = null;
       }
     }
 
     public void printList(){
+        if(tail == null){
+            System.out.println("Empty List!");
+            return;
+        }
         Node head = tail.next;
         do{
           System.out.print(head.data + " ");
