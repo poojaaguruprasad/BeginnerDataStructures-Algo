@@ -34,6 +34,7 @@ class BinarySearchTreeImpl {
         binarySearchTree.delete(0);
         binarySearchTree.traverseInOrder();
         System.out.println();
+        System.out.println("Does the tree contain 8 ? " + binarySearchTree.containsNode(8));
     }
     
 }
@@ -109,13 +110,17 @@ class BinarySearchTree{
 
     //FIND ELEMENT
      
-    /**public boolean containsNode(int data){
-
+    public boolean containsNode(int data){
+        return containsNodeRecursive(root, data);
     }
 
-    private boolean containsNodeRecursive(int data){
-
-    }**/
+    private boolean containsNodeRecursive(Node current, int data){
+        if(current == null) return false;
+        if(data  == current.data) return true;
+        return data < current.data 
+            ? containsNodeRecursive(current.left, data)
+            : containsNodeRecursive(current.right, data);
+    }
 
     //DELETION - returns root node after deletion
 
